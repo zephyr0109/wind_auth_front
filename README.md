@@ -1,5 +1,10 @@
 # wind_auth_front
 
+authorization test project
+
+base library : vue
+sub library : vue-router, bootstrap-vue, vuex
+
 ## Project setup
 ```
 npm install
