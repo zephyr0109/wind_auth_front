@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import httpUtils from "~/utils/httpUtil";
 export default {
   data() {
     return {
@@ -32,9 +33,12 @@ export default {
     onInputChange(event) {
       console.log(event);
     },
-    onSubmit(event) {
+    async onSubmit(event) {
       event.preventDefault();
 
+      let url = "/api/authenticate/signin";
+      let response = await httpUtils.post(url, this.formData);
+      console.log(response);
       console.log(this.formData.secvalue);
       console.log(this.formData.userId);
     },

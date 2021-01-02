@@ -6,6 +6,9 @@ module.exports = {
             alias : {
                 "~" : path.join(__dirname, "src/")
             }
-        }
+        },
+    },
+    devServer : {
+        port : "9090"
     }
 }
