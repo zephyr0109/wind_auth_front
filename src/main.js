@@ -6,6 +6,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import App from "./App.vue";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+import VueLodash from "vue-lodash";
+import lodash from "lodash";
 
 import routes from "~/router/routes";
 
@@ -18,6 +20,7 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
+Vue.use(VueLodash, { name: "custom", lodash: lodash });
 
 new Vue({
   render: (h) => h(App),

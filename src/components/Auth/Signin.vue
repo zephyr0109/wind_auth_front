@@ -3,16 +3,16 @@
     <h1>Wind Auth Service</h1>
     <b-form @submit="onSubmit" class="form w100p h100p">
       <b-form-group label="User Id" label-for="userId">
-        <b-form-input id="userId" v-model="formData.userId"></b-form-input>
+        <b-form-input id="id" v-model="formData.id"></b-form-input>
       </b-form-group>
       <b-form-group label="Password" label-for="secvalue">
         <b-form-input
           id="secvalue"
           type="password"
-          v-model="formData.secvalue"
+          v-model="formData.password"
         ></b-form-input>
       </b-form-group>
-      <b-button type="submit" variant="primary">Submit</b-button>
+      <b-button type="submit" variant="primary">Sign in</b-button>
       <b-button type="reset" @click="movePage('register')"> Sign up</b-button>
     </b-form>
   </div>
@@ -24,8 +24,8 @@ export default {
   data() {
     return {
       formData: {
-        userId: "",
-        secvalue: "",
+        id: "",
+        password: "",
       },
     };
   },
@@ -39,8 +39,8 @@ export default {
       let url = "/api/authenticate/signin";
       let response = await httpUtils.post(url, this.formData);
       console.log(response);
-      console.log(this.formData.secvalue);
-      console.log(this.formData.userId);
+      console.log(this.formData.password);
+      console.log(this.formData.id);
     },
     movePage(url) {
       this.$router.push(url);
